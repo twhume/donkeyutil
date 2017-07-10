@@ -7,7 +7,7 @@ if [ $# -ne 2 ]
 fi
 
 INDIR=$1
-if [ ! -d "$DIRECTORY" ]
+if [ ! -d "$INDIR" ]
   then
     echo "Session directory $INDIR does not exist"
     exit
