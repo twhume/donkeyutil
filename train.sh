@@ -20,8 +20,9 @@ cd $SESSIONS
 for i in $ROOTNAMES; do
 	ls -1d ${i}_* >> $TMPFILE
 done
-ALLFILES=`cat $TMPFILE | tr '\n' ','`
+ALLFILES=`cat $TMPFILE | tr '\n' ','i | sed 's/,*$//g'`
 cd $DONKEYHOME
+echo python scripts/train.py --sessions=$ALLFILES --name=$MODELNAME
 python scripts/train.py --sessions=$ALLFILES --name=$MODELNAME
 rm $TMPFILE
 
