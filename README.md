@@ -3,16 +3,16 @@ Utilities written to help training a Donkey (see diyrobocars.com). These are pre
 
 These scripts help extract good training data from sessions:
 
-`makevideo.sh &lt;SESSION DIRECTORY&gt; &lt;OUTPUT VIDEO&gt;`  
+`makevideo.sh <SESSION DIRECTORY> <OUTPUT VIDEO>`  
 Turns a session directory into a video with the correct frame-rate, and the actual frame numbers overlaid into the video. See sample output [here](https://goo.gl/photos/h9RzsU8osPy9eHCv7)
 
-`cutsegment.sh &lt;SESSION DIRECTORY&gt; &lt;OUTPUT DIRECTORY ROOT&gt; &lt;START FRAME&gt; &lt;END FRAME&gt;`  
+`cutsegment.sh <SESSION DIRECTORY> <OUTPUT DIRECTORY ROOT> <START FRAME> <END FRAME>`  
 Extract a sequence of frames from a session and save them into a new directory of the form &lt;OUTPUT DIRECTORY ROOT&gt;_&lt;NUMBER&gt;, incrementing NUMBER as necessary. 
 
-`batch.sh` &lt;CSV FILE&gt; &lt;SESSION DIRECTORY&gt; &lt;OUTPUT DIRECTORY&gt;  
+`batch.sh <CSV FILE> <SESSION DIRECTORY> <OUTPUT DIRECTORY>`  
 Take a CSV file listing sessions and segments, and extract all of them into separate directories using `cutsegment.sh`
 
-`train.sh` &lt;DONKEY DIRECTORY&gt; &lt;SESSIONS DIRECTORY&gt; &lt;CSV FILE&gt; &lt;MODEL NAME&gt;  
+`train.sh <DONKEY DIRECTORY> <SESSIONS DIRECTORY> <CSV FILE> <MODEL NAME>`  
 Kicks off training a new model using all the segment names in the CSV file
 
 # My workflow
