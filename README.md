@@ -1,7 +1,7 @@
 # donkeyutil
 Utilities written to help training a Donkey (see diyrobocars.com). These are pretty rough and ready.
 
-These scripts help extract good training data from sessions:
+These scripts help extract good training data from sessions, so are all for v1 Donkey
 
 `makevideo.sh <SESSION DIRECTORY> <OUTPUT VIDEO>`  
 Turns a session directory into a video with the correct frame-rate, and the actual frame numbers overlaid into the video. See sample output [here](https://goo.gl/photos/h9RzsU8osPy9eHCv7)
@@ -15,9 +15,20 @@ Take a CSV file listing sessions and segments, and extract all of them into sepa
 `train.sh <DONKEY DIRECTORY> <SESSIONS DIRECTORY> <CSV FILE> <MODEL NAME>`  
 Kicks off training a new model using all the segment names in the CSV file
 
+`train.sh <DONKEY DIRECTORY> <SESSIONS DIRECTORY> <CSV FILE> <MODEL NAME>`  
+Kicks off training a new model using all the segment names in the CSV file
+
+These scripts support the new v2 Donkey
+
+`python session2tub.py <SESSION DIRECTORY> <TUB DIRECTORY>`  
+Converts an old v1 Donkey session to the new v2 tub format
+
+`python mirrortub.py <INPUT> <OUTPUT>`  
+Takes an input tub, mirrors its images angle readings horizontally, outputs a new tub
+
 # My workflow
 
-Using these scripts:
+(Old, for Donkey v1) Using these scripts:
 
 1. Record a training session as per normal
 1. Use `makevideo.sh` to turn it into a video
