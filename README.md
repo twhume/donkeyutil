@@ -23,8 +23,8 @@ These scripts support the new v2 Donkey
 `python session2tub.py <SESSION DIRECTORY> <TUB DIRECTORY>`  
 Converts an old v1 Donkey session to the new v2 tub format
 
-`python mirrortub.py <INPUT> <OUTPUT>`  
-Takes an input tub, mirrors its images angle readings horizontally, outputs a new tub
+`python processtub.py <OP> <INPUT> <OUTPUT>`  
+Takes an input tub, applies the function named <OP> (currently mirror or blank_horizon), outputs a new tub
 
 # My workflow
 
