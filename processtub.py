@@ -7,12 +7,12 @@ import PIL
 from PIL import Image, ImageDraw
 from shutil import copyfile
 
-def mirror(img, data):
+def ext_mirror(img, data):
     flipped = img.transpose(Image.FLIP_LEFT_RIGHT)
     data["user/angle"] *= -1
     return (flipped, data)
 
-def blank_horizon(img, data):
+def ext_blank_horizon(img, data):
     draw = ImageDraw.Draw(img)
     draw.rectangle([0,0,160,50],(0,0,0,0),(0,0,0,0))
     del draw
@@ -26,7 +26,7 @@ if len(sys.argv) != 4:
     print("Usage: " + sys.argv[0] + " (mirror|blank_horizon) input_tub_dir output_tub_dir")
     sys.exit();
 op_name = sys.argv[1]
-op = locals()[op_name]
+op = locals()["ext_" + op_name]
 
 # Make the output directory, fail if it already exists
     
@@ -55,6 +55,7 @@ for f in jsonfiles:
     text_file = open(join(output_dir, f), "w")
     text_file.write(json_data)
     text_file.close()    
-    
+
+print("Applied " + op_name + " to " + str(len(jsonfiles)) + " entries")
 
     
