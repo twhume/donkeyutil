@@ -1,7 +1,8 @@
 # donkeyutil
 Utilities written to help training a Donkey (see diyrobocars.com). These are pretty rough and ready.
 
-These scripts help extract good training data from sessions, so are all for v1 Donkey
+# Scripts for Donkey v1 (probably obsolete now)
+All the scripts in the v1 subdirectory help extract good training data from sessions, so are all for v1 Donkey
 
 `makevideo.sh <SESSION DIRECTORY> <OUTPUT VIDEO>`  
 Turns a session directory into a video with the correct frame-rate, and the actual frame numbers overlaid into the video. See sample output [here](https://goo.gl/photos/h9RzsU8osPy9eHCv7)
