@@ -1,6 +1,27 @@
 # donkeyutil
 Utilities written to help training a Donkey (see diyrobocars.com). These are pretty rough and ready.
 
+# Scripts for Donkey 2.5.8
+
+These might work with other Donkey versions, but all my testing is with Donkey 2.5.8
+
+`process_tub.py
+
+usage: process_tub.py [-h] [--crop CROP] [--blank BLANK] [--flip_h]
+                      [--noise NOISE]
+                      tub_in tub_out
+
+Performs operations on a tub: cropping (to x1,y1,x2,y2 argument), blanking (same arguments), flipping horizontally (and updating steering record) and adding noise (where the argument is %age of noise to add - e.g. 0.001)
+
+`make-tubs.sh
+
+Helper script which does a few common manipulations using the process_tub.py. I use this to quickly make a ton of new training data from a cleaned tub.
+
+`plot_tub.py
+`tub_empty_rows.py
+
+Ignore these for now, WIP.
+
 # Scripts for Donkey v1 (probably obsolete now)
 All the scripts in the v1 subdirectory help extract good training data from sessions, so are all for v1 Donkey
 
